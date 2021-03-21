@@ -1,0 +1,150 @@
+<%- include ("partials/header") %>
+
+
+    
+        <div class="SearchBox">
+            <table class="SearchBar">
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Find your Location" class="Search" name="SearchB">
+                    </td>
+                    <td>
+                        <button type="submit" class="SeachSubmit"><span class="material-icons">search</span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+   
+    
+    </div>
+    <!-- Upcoming Drop Posts -->
+    
+    
+    <!-- Posts of upcoming drops say in coming 2 days to be rendered in the home page with a live countdown of the droptime -->
+    <!-- Cards to be used in myStore as individual posts instead-->
+    
+    <div class="store">
+    <h2 class="titlle">Store-1</h2>
+    <div class="Facilitycontainer">
+        <div class="Cardcontainer">
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/watch.png" alt="">
+                    </div>
+                    <br>
+                    <h3>Watch</h3>
+                </div>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                    eiugid satrebjl5s 5ujsho 5sy ab?</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/shoe1.jpg" alt="">
+                    </div>
+                    <br>
+                    <h3>Shoe</h3>
+                </div>
+                <p class="description">Cheap Watch at great condition</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/pant1.jpg" alt="">
+                    </div>
+                    <br>
+                    <h3>Shoes</h3>
+                </div>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                    eiugid satrebjl5s 5ujsho 5sy ab?</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="store">
+    <h2 class="titlle">Store-2</h2>
+    <div class="Facilitycontainer">
+        <div class="Cardcontainer">
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/decor1.jpg" alt="">
+                    </div>
+                    <br>
+                    <h3>Decor1</h3>
+                </div>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                    eiugid satrebjl5s 5ujsho 5sy ab?</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/decor2.jpg" alt="">
+                    </div>
+                    <br>
+                    <h3>Decor1</h3>
+                </div>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                    eiugid satrebjl5s 5ujsho 5sy ab?</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <img class="iconImage" src="/static/image/decor3.jpg" alt="">
+                    </div>
+                    <br>
+                    <h3>Decor1</h3>
+                </div>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                    eiugid satrebjl5s 5ujsho 5sy ab?</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <% storex.forEach(store => {%>
+        <div class="store">
+            <h2  class="titlle"><%=store.storeName%></h2>
+            <div class="Facilitycontainer">
+                <div class="Cardcontainer">
+                    <div class="Fcard">
+                        <div class="Fcontent">
+                            <div class="iconborder">
+                                <span class="fas fa-car"></span>
+                            </div>
+                            <br>
+                            <h3>Item1</h3>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                            eiugid satrebjl5s 5ujsho 5sy ab?</p>
+                    </div>
+                    <div class="Fcard">
+                        <div class="Fcontent">
+                            <div class="iconborder">
+                                <span class="fas fa-utensils"></span>
+                            </div>
+                            <br>
+                            <h3>Item2</h3>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                            eiugid satrebjl5s 5ujsho 5sy ab?</p>
+                    </div>
+                    <div class="Fcard">
+                        <div class="Fcontent">
+                            <div class="iconborder">
+                                <span class="fas fa-car"></span>
+                            </div>
+                            <br>
+                            <h3>Item3</h3>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, voluptatibu
+                            eiugid satrebjl5s 5ujsho 5sy ab?</p>
+                    </div>
+                </div>
+            </div>
+        </div>                
+    <%}); %> 
+
+
+    <%- include ("partials/footer") %>

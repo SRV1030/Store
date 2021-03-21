@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #000000;
+  color: #c41d1d;
+}
+.Home {
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;  
+  min-height: 20vh;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 10px;
+}
+
+header li,
+a {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  color: #edf0f1;
+  text-decoration: none;
+  padding: 20px;
+}
+.navLogo,
+.nav_links {
+  cursor: pointer;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.navLogo a {
+  font-size: 2em;
+  display: inline-block;
+}
+.nav_links li,
+a {
+  display: inline-block;
+  font-size: 1.3em;
+  /* //side bysode */
+  padding: 0 10px;
+}
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+.navitem::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  transition: width 0.5s;
+}
+.navitem:hover::after {
+  width: 100%;
+  transition: width 0.5s;
+}
+/* .SearchBox{
+    height: 2vh;
+    wifth
+ */
+.SearchBox {
+  margin: 10%;
+  margin-top: 3.5%;
+  position: absolute;
+  width: 30vw;
+  height: 8vh;
+  border: 4px solid #e2ebf0;
+  padding: 0px 10px;
+  border-radius: 50px;
+}
+.SearchBar {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.Search {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 0px5px;
+  border-radius: 50px;
+  font-size: medium;
+  font-family: sans-serif;
+  color: #eddfdf;
+  font-weight: 500;
+  background: none;
+}
+.Search:focus {
+  outline: none;
+}
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+.material-icons {
+  color: #e2ebf0;
+}
+/* Facility Cards */
+.Facilitycontainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-height: 40vh;
+}
+.Cardcontainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 60px;
+}
+.Cardcontainer .Fcard {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+.Cardcontainer .Fcard .Fcontent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+  opacity: 1;
+  text-align: center;
+}
+.Cardcontainer .Fcard:hover .Fcontent {
+  opacity: 0.3;
+  transform: translateY(-35px);
+}
+.Cardcontainer .Fcard .Fcontent .iconborder {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  text-align: center;
+  opacity: 1;
+}
+.Cardcontainer .Fcard .Fcontent .iconborder .far,
+.Cardcontainer .Fcard .Fcontent .iconborder .fas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 150px;
+  object-fit: cover;
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.Cardcontainer .Fcard .Fcontent h3 {
+  position: relative;
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+  margin: 40px 0 6px;
+  line-height: 1.1em;
+}
+.Cardcontainer .Fcard .description {
+  position: absolute;
+  border: 50px;
+  display: flex;
+  text-align: center;
+}
+.Cardcontainer .Fcard .description {
+  list-style: none;
+  margin: 0 10px;
+  transform: translateY(180px);
+  transition: 0.01s;
+  opacity: 0;
+  color: rgb(250, 245, 245);
+
+  /* text-shadow: 2px 2px #cec4c4; */
+}
+.Cardcontainer .Fcard:hover .description {
+  opacity: 1;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+.container .card p {
+  margin: 0 10px;
+  font-size: 24px;
+}
+.iconImage{
+  height: inherit;
+  width: inherit;
+}
+/* footer */
+footer {
+  bottom: 0px;
+  position: relative;
+  width: 100vw;
+  height: 30vh;
+  background: #1f2022;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+}
+.footerContainer h2 {
+  color: #796c6c;
+  display: inline-block;
+}
+.footerContainer h2 a .fab {
+  color: #796c6c;
+  font-size: 1em;
+  display: inline-block;
+  transition: 0.3s;
+}
+.footerContainer h2 a .fab:hover {
+  color: #e2ebf0;
+  transform: scale(1.2, 1.2);
+  transition: 0.3s;
+}
+
+.store{
+  justify-content: center;
+  align-items:left;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #dbdcdd 1px solid;
+  margin-top: 6%;
+}
+.titlle{
+  margin-left: 5%;
+  margin-top: 5%;
+}

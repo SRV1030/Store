@@ -1,0 +1,46 @@
+<%- include ("partials/header") %>
+
+</div>
+
+<section id="storeOwner">
+    <div class="container row">
+        <h1 class="heading col-lg-3">Create a Drop</h1>
+        <div class="container col-lg-9">
+            <form action="/newPost" method="post" enctype="multipart/form-data">
+                <div class="form-group">                    
+                    <div class="row">
+                        <div class="mb-3 col-lg-6">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" name="itemName" class="form-control" id="itemName" autocomplete="false"
+                                required>
+                        </div>
+
+                        <div class="mb-3 col-lg-6">
+                            <!-- TO DO: countdown function to be added-->
+                            <label for="dropTime" class="form-label">Set Drop Time</label>
+                            <input type="datetime-local" name="dropTime" class="form-control" id="dropTime" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="desc" class="form-label">Description</label>
+                        <input type="text" name="desc" class="form-control" id="desc" autocomplete="false"
+                            required>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-lg-12">
+                            <!-- TO DO: make so that any number of images can be added and give each of them a number or Id-->
+                            <label for="itemImage" class="form-label">Add Image</label>
+                            <input type="file" name="itemImage" class="form-control filepond" id="itemImage">
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+

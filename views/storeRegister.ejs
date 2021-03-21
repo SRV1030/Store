@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ("partials/header") %>
+
+</div>
+
+
+<section id="storeRegister">
+    <div class="container row">
+        <h1 class="heading col-lg-3">Register Your Thrift Store</h1>
+        <div class="container col-lg-9">
+            <form action="/storeRegister" method="post">
+                <div class="row">
+                    <div class="mb-3 col-lg-6">
+                        <label for="storeName" class="form-label">Store Name</label>
+                        <input type="text" name="storeName" class="form-control" id=storeName autocomplete="false"
+                            required>
+                            
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="storeEmail" class="form-label">Email address</label>
+                        <input type="email" name="storeEmail" class="form-control" id="storeEmail" required>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="mb-3 col-lg-6">
+                        <label for="storePhone" class="form-label">GPay no</label>
+                        <input type="tel" name="storePhone" class="form-control" id="storePhone">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="storeAddress" class="form-label">Address</label>
+                    <textarea name="storeAddress" class="form-control" id="storeAddress" cols="30"
+                        rows="5"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="storeAddress" class="form-label">Additional information</label>
+                    <textarea name="storeInfo" class="form-control" id="storeInfo" cols="30"
+                        rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>

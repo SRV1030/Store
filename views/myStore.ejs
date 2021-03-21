@@ -1,0 +1,66 @@
+<%- include ("partials/header") %>
+
+</div>
+
+    
+    
+    
+    <!-- There should be images inside the cards -->
+       <div class="Facilitycontainer">
+        <div class="Cardcontainer">
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <span class="far fa-user"></span>
+                    </div>
+                    <br>
+                    <h3>Item 3</h3>
+                </div>
+                <p class="description">Price: 500/- 
+                    Condition: All good</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <span class="fas fa-utensils"></span>
+                    </div>
+                    <br>
+                    <h3>Item 2</h3>
+                </div>
+                <p class="description">Price: 700/- Condition: Used only once</p>
+            </div>
+            <div class="Fcard">
+                <div class="Fcontent">
+                    <div class="iconborder">
+                        <span class="fas fa-car"></span>
+                    </div>
+                    <br>
+                    <h3>Item 1</h3>
+                </div>
+                <p class="description">Price: 500/- Condition: Stain in the collar(unnoticeable)</p>
+            </div>
+        </div>
+    </div>
+
+    <% items.forEach(function(image) { %>
+        <div class="Facilitycontainer">
+            <div class="Cardcontainer">
+                <div class="Fcard">
+                    <div class="Fcontent">
+                        <div class="iconborder">
+                            <img class="iconImage" src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" alt="">
+                        </div>
+                        <br>
+                        <h3><%= image.itemName %></h3>
+                    </div>
+                    <p class="description">Price: 500/- 
+                       <%= image. desc %></p>
+                </div> 
+                <%});%>           
+                
+            </div>
+        </div>  
+
+
+
+<%- include ("partials/footer") %>
