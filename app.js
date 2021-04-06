@@ -10,8 +10,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // const expressLayouts = require('express-ejs-layouts');
 
-const  multer = require('multer');
- 
+const multer = require('multer');
+
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads')
@@ -20,7 +20,7 @@ let storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now())
     }
 });
- 
+
 const upload = multer({ storage: storage });
 
 app.set('view engine', 'ejs');
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const imageMimeTypes = ["image/jpeg", "image/png", "images/gif"];
 
 /* -------------------- mongodb setup ------------------- */
-mongoose.connect('mongodb://localhost:27017/thriftDB', {
+mongoose.connect('mongodb+srv://SRV1030:qwerty1234@cluster0.gje6l.mongodb.net/thriftDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -47,16 +47,14 @@ const thriftItemSchema = new Schema({
         data: Buffer,
         type: String,
         // required: true
-    }, 
+    },
     desc: String,
-     
+
     // dateAdded: {
     //     type: String
     //     // type: Date
     // }
-},
-{ typeKey: '$type' } 
-);
+}, { typeKey: '$type' });
 
 //creating thrift store schema
 const thriftStoreSchema = new Schema({
@@ -72,31 +70,31 @@ const thriftStoreSchema = new Schema({
 const ThriftStore = mongoose.model('ThriftStore', thriftStoreSchema);
 const Item = mongoose.model('Item', thriftItemSchema);
 app.route("/")
-    .get((req,res) =>{
-        ThriftStore.find({},(err,store)=>{
+    .get((req, res) => {
+        ThriftStore.find({}, (err, store) => {
             // console.log(store);
-                res.render("index",{
-                    storex:store,
-                });
-            
+            res.render("index", {
+                storex: store,
+            });
+
         })
-    
+
     })
 
 app.route("/myStore")
-    .get((req,res)=>{
-        Item.find({},(err,items)=>{           
-            res.render("myStore",{
+    .get((req, res) => {
+        Item.find({}, (err, items) => {
+            res.render("myStore", {
                 items: items,
             });
-        })        
-    
+        })
+
     });
-  
+
 
 app.route("/storeRegister")
-    .get((req,res)=>{
-    res.render("storeRegister");
+    .get((req, res) => {
+        res.render("storeRegister");
     })
     .post((req, res) => {
         const store = new ThriftStore({
@@ -110,26 +108,27 @@ app.route("/storeRegister")
         res.redirect("/");
     });
 app.route("/newPost")
-    .get((req,res)=>{
+    .get((req, res) => {
         res.render("newPost");
     })
-app.post("/newPost",upload.single('itemImage'),(req,res) => {
+app.post("/newPost", upload.single('itemImage'), (req, res) => {
 
     let item = new Item({
         itemName: req.body.itemName,
         dropTime: req.body.dropTime,
         img: {
             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-            type: 'image/jpg',},
-        desc:  req.body.desc
+            type: 'image/jpg',
+        },
+        desc: req.body.desc
 
     });
     console.log(item);
     item.save();
     res.redirect("/myStore");
 
-       
-    })
+
+})
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
